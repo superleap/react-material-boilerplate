@@ -18,7 +18,7 @@
   "dependencies": {
     "babel-standalone": "^6.7.4",
     "html-webpack-plugin": "^2.16.1",
-    "material-ui": "^0.15.0-beta.1",
+    "material-ui": "^0.15.0-beta.2",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
     "react-tap-event-plugin": "^1.0.0"
