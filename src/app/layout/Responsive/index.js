@@ -1,16 +1,17 @@
 import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
+import darkTheme from '../../theme/dark';
 import {
     Card,
     CardActions,
     CardHeader,
     CardText
 } from 'material-ui/Card/';
+import './style.less';
 import AppBar from 'material-ui/AppBar';
 
-const darkMuiTheme = getMuiTheme(darkBaseTheme);
+const darkMuiTheme = getMuiTheme(darkTheme);
 
 class Layout extends React.Component {
     render() {
