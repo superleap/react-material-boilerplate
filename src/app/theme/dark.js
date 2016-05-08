@@ -6,7 +6,6 @@ import {
     deepPurple600,
     deepPurple800,
     grey900,
-    darkBlack,
     white
 } from 'material-ui/styles/colors';
 import {fade} from 'material-ui/utils/colorManipulator';
