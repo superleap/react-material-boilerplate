@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {Component, PropTypes} from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import withWidth, {MEDIUM, LARGE} from 'material-ui/utils/withWidth';
 import darkTheme from '../../theme/dark';
 import {
     Card,
@@ -8,16 +9,64 @@ import {
     CardHeader,
     CardText
 } from 'material-ui/Card/';
-import './style.less';
 import AppBar from 'material-ui/AppBar';
+import Footer from '../../component/Footer';
+import './style.less';
 
 const darkMuiTheme = getMuiTheme(darkTheme);
 
 class Layout extends React.Component {
+    static propTypes = {
+        children: PropTypes.node,
+        location: PropTypes.object,
+        width: PropTypes.number.isRequired
+    };
+
+    static contextTypes = {
+    };
+
+    static childContextTypes = {
+        muiTheme: PropTypes.object
+    };
+
+    getChildContext() {
+        return {
+            muiTheme: this.state.muiTheme
+        };
+    };
+
+    componentWillMount() {
+        this.setState({
+            muiTheme: getMuiTheme()
+        });
+    };
+
+    componentWillReceiveProps(nextProps, nextContext) {
+        const newMuiTheme = nextContext.muiTheme ? nextContext.muiTheme : this.state.muiTheme;
+        this.setState({
+            muiTheme: newMuiTheme
+        });
+    };
+
+    getStyles() {
+        const styles = {
+            wrapper: {
+                minHeight: '100%'
+            }
+        };
+
+        return styles;
+    };
+
     render() {
+        const {
+            prepareStyles,
+        } = this.state.muiTheme;
+        const styles = this.getStyles();
+
         return (
             <MuiThemeProvider muiTheme={darkMuiTheme}>
-                <div>
+                <div style={ styles.wrapper }>
                     <AppBar title="My AppBar"/>
                     <Card>
                         <CardHeader
@@ -33,10 +82,15 @@ class Layout extends React.Component {
                             Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
                         </CardText>
                     </Card>
+                    <Footer/>
                 </div>
             </MuiThemeProvider>
         )
     }
 }
 
-export default Layout;
+Layout.childContextTypes = {
+    muiTheme: PropTypes.object.isRequired
+};
+
+export default withWidth()(Layout);

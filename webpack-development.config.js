@@ -24,7 +24,7 @@ const config = {
     },
     //Config options on how to interpret requires imports
     resolve: {
-        extensions: ["", ".js", ".css", ".scss"]
+        extensions: ["", ".js", ".css", ".less"]
         //node_modules: ["web_modules", "node_modules"]  (Default Settings)
     },
     //Server Configuration options

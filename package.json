@@ -1,6 +1,6 @@
 {
   "name": "react-material-boilerplate",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "React material boilerplate",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,8 @@
   "dependencies": {
     "babel-standalone": "^6.7.4",
     "html-webpack-plugin": "^2.16.1",
-    "material-ui": "^0.15.0-beta.2",
+    "material-ui": "^0.15.0",
+    "material-ui-community-icons": "^0.15.0",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
     "react-tap-event-plugin": "^1.0.0"
