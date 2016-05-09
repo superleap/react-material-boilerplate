@@ -18,7 +18,8 @@ class Footer extends React.Component
                 position: 'fixed',
                 bottom: 0,
                 left: 0,
-                width: '100%'
+                width: '100%',
+                boxSizing: 'border-box'
             },
             a: {
                 color: this.context.muiTheme.palette.alternateTextColor
@@ -26,8 +27,7 @@ class Footer extends React.Component
             p: {
                 margin: '0 auto',
                 padding: this.context.muiTheme.spacing.desktopGutterMini,
-                color: this.context.muiTheme.palette.textColor,
-                maxWidth: 800
+                color: this.context.muiTheme.palette.textColor
             },
             iconButton: {
                 color: this.context.muiTheme.palette.alternateTextColor
