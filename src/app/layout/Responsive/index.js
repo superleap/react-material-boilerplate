@@ -10,6 +10,7 @@ import {
     CardText
 } from 'material-ui/Card/';
 import AppBar from 'material-ui/AppBar';
+import ChromeHelmet from '../../component/ChromeHelmet';
 import Footer from '../../component/Footer';
 import './style.less';
 
@@ -67,6 +68,7 @@ class Layout extends React.Component {
         return (
             <MuiThemeProvider muiTheme={darkMuiTheme}>
                 <div style={ styles.wrapper }>
+                    <ChromeHelmet/>
                     <AppBar title="My AppBar"/>
                     <Card>
                         <CardHeader
