@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --config webpack-development.config.js --progress --inline --colors --open",
     "build": "webpack --config webpack-production.config.js --progress --colors",
-    "lint": "eslint src && echo \"eslint: no lint errors\""
+    "lint": "eslint src && echo \"eslint: no lint errors\"",
+    "changelog": "github_changelog_generator --no-author --bugs-label '### Fixed' --pr-label '### Added' --bugs-label '### Fixed'"
   },
   "repository": {
     "type": "git",
